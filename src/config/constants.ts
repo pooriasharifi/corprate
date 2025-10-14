@@ -3,6 +3,21 @@ import { CustomAppRoutes } from "./local_api";
 export const LOGO = "/images/logo.svg";
 export const TOMAN_WHITE_SVG = "/images/toman-white.svg";
 export const TOMAN_SVG = "/images/toman.svg";
+export const APPLE_LAPTOP = "/images/Apple_Computers.svg";
+
+export const A_FEATURE = "/images/feature/a.png";
+export const B_FEATURE = "/images/feature/b.png";
+export const C_FEATURE = "/images/feature/c.png";
+export const D_FEATURE = "/images/feature/d.png";
+export const E_FEATURE = "/images/feature/e.png";
+
+export const COMPANY_LOGO = [
+  { src: "/images/company/a.png", alt: "a" },
+  { src: "/images/company/b.png", alt: "a" },
+  { src: "/images/company/c.png", alt: "a" },
+  { src: "/images/company/d.png", alt: "a" },
+  { src: "/images/company/e.png", alt: "a" },
+];
 
 export const HEADER_ITEMS = [
   { name: "خانه", link: CustomAppRoutes.home },

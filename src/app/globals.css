@@ -64,7 +64,7 @@ body {
   --price_bg: oklch(98.511% 0.00011 271.152);
   --primary-foreground: oklch(0.985 0 0);
   --primary-overlay: oklch(79.602% 0.08531 262.341);
-  --secondary: oklch(0.97 0 0);
+  --secondary: #010D50;
   --secondary-foreground: oklch(0.205 0 0);
   --muted: RGB(158, 158, 158);
   --muted-foreground: oklch(0.556 0 0);

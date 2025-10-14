@@ -87,7 +87,7 @@ const HTitle = React.forwardRef<HTMLInputElement, IText>(
 const H2Title = React.forwardRef<HTMLInputElement, IText>(
   ({ className, type, icon, title, ...props }, ref) => {
     return (
-      <h2 className={cn("text-sm text-muted font-medium", className)}>
+      <h2 className={cn("text-sm text-foreground font-medium", className)}>
         {title}
       </h2>
     );
