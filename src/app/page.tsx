@@ -68,6 +68,16 @@ export default function Home() {
         <div className="w-full justify-center flex ">
           <Button className="place-self-center">اطلاعات بیشتر</Button>
         </div>
+
+        <Image
+          alt=""
+          src={
+            "https://dkstatics-public.digikala.com/digikala-adservice-banners/653bd45e540ebef2a6238f3cd4a1b5eef67971d5_1760772593.gif?x-oss-process=image/resize,w_800"
+          }
+          width={900}
+          height={900}
+          unoptimized
+        />
       </RootBox>
     </>
   );
