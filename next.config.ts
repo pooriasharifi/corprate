@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "dkstatics-public.digikala.com",
       },
+      {
+        protocol: "https",
+        hostname: "www.georgetown.edu",
+      },
     ],
   },
   /* config options here */

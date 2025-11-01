@@ -1,17 +1,29 @@
 import CompanyLogoComp from "@/components/interface/home/brands";
+import CommemtCaurosel from "@/components/interface/home/comment_carousel";
 import FeatureComp from "@/components/interface/home/feature";
 import TopMainHome from "@/components/interface/home/top";
+import NoteWeb from "@/components/interface/home/web_note";
 import RootBox from "@/components/ui/box";
 import { Button } from "@/components/ui/button";
-import { BoldTitle, CustomText, H2Title, HTitle } from "@/components/ui/title";
+import {
+  BoldTitle,
+  CustomText,
+  H2Title,
+  H3Title,
+  HTitle,
+} from "@/components/ui/title";
 import {
   A_FEATURE,
   APPLE_LAPTOP,
   B_FEATURE,
   C_FEATURE,
   COMPANY_LOGO,
+  COMPUTERS,
   D_FEATURE,
   E_FEATURE,
+  F_FEATURE,
+  MOBILE,
+  MOBILE_DOUBLE,
 } from "@/config/constants";
 import Image from "next/image";
 
@@ -68,16 +80,36 @@ export default function Home() {
         <div className="w-full justify-center flex ">
           <Button className="place-self-center">اطلاعات بیشتر</Button>
         </div>
+        <div className="flex justify-center gap-10">
+          <NoteWeb />
+          <Image alt="laptop" src={MOBILE} width={300} height={500} />
+        </div>
+        <div className="flex justify-center gap-10">
+          <Image alt="laptop" src={COMPUTERS} width={400} height={500} />
+          <NoteWeb />
+        </div>
+      </RootBox>
+      <div className="mt-32 w-full right-0 left-0 relative bg-primary  h-[300px] p-5 grid grid-cols-2 place-content-center">
+        <div>
+          <Image
+            alt="mobile"
+            src={MOBILE_DOUBLE}
+            width={400}
+            height={400}
+            className="absolute -top-19 lg:right-1/12"
+          />
+        </div>
+        <div className="space-y-3 ">
+          <H2Title
+            title="لورم ایپسوم متن ساختگی با تولید سادگی"
+            className="text-2xl font-black"
+          />
+          <H3Title title="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک" />
+        </div>
+      </div>
 
-        <Image
-          alt=""
-          src={
-            "https://dkstatics-public.digikala.com/digikala-adservice-banners/653bd45e540ebef2a6238f3cd4a1b5eef67971d5_1760772593.gif?x-oss-process=image/resize,w_800"
-          }
-          width={900}
-          height={900}
-          unoptimized
-        />
+      <RootBox className="space-y-24 pt-16 p-5">
+        <CommemtCaurosel />
       </RootBox>
     </>
   );

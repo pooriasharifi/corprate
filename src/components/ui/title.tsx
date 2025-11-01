@@ -94,4 +94,14 @@ const H2Title = React.forwardRef<HTMLInputElement, IText>(
   }
 );
 
-export { Title, BoldTitle, SubTitle, CustomText, HTitle, H2Title };
+const H3Title = React.forwardRef<HTMLInputElement, IText>(
+  ({ className, type, icon, title, ...props }, ref) => {
+    return (
+      <h3 className={cn("text-sm text-foreground font-medium", className)}>
+        {title}
+      </h3>
+    );
+  }
+);
+
+export { Title, BoldTitle, SubTitle, CustomText, HTitle, H2Title, H3Title };
