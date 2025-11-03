@@ -2,6 +2,7 @@ import CompanyLogoComp from "@/components/interface/home/brands";
 import CommemtCaurosel from "@/components/interface/home/comment_carousel";
 import FeatureComp from "@/components/interface/home/feature";
 import TopMainHome from "@/components/interface/home/top";
+import CustomVideo from "@/components/interface/home/video";
 import NoteWeb from "@/components/interface/home/web_note";
 import RootBox from "@/components/ui/box";
 import { Button } from "@/components/ui/button";
@@ -30,8 +31,8 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <TopMainHome />
-      <RootBox className="space-y-24 pt-16">
+      {/* <TopMainHome /> */}
+      {/* <RootBox className="space-y-24 pt-16">
         <div className="relative place-items-center space-y-4 ">
           <H2Title
             title="برندهایی که به ما اعتماد کرده اند"
@@ -110,7 +111,11 @@ export default function Home() {
 
       <RootBox className="space-y-24 pt-16 p-5">
         <CommemtCaurosel />
-      </RootBox>
+        <div className="grid grid-cols-2 gap-4">
+          <NoteWeb />
+          <CustomVideo src="video/test.mp4" />
+        </div>
+      </RootBox> */}
     </>
   );
 }

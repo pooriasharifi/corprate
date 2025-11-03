@@ -7,6 +7,7 @@ import { CustomText } from "@/components/ui/title";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import CustomHeader from "@/components/layouts/header";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body>
         <CustomHeader />
         {children}
+        <Toaster />
       </body>
     </html>
   );

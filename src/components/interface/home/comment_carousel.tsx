@@ -12,18 +12,21 @@ import Image from "next/image";
 import { BoldTitle, CustomText, H2Title } from "@/components/ui/title";
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { toast } from "sonner";
 
 export default function CommemtCaurosel() {
   const [api, setApi] = useState<CarouselApi>();
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
-
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const items = [1, 1, 1, 1, 1, 1];
   useEffect(() => {
     if (!api) return;
 
     const onSelect = () => {
       setCanScrollNext(api.canScrollNext());
       setCanScrollPrev(api.canScrollPrev());
+      setSelectedIndex(api.selectedScrollSnap() || 0);
     };
     onSelect();
     api.on("select", onSelect);
@@ -33,8 +36,9 @@ export default function CommemtCaurosel() {
   }, [api]);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mt-10">
       <H2Title title="نظر مشتریان درباره ما" />
+
       <Carousel
         setApi={setApi}
         className="relative overflow-hidden"
@@ -45,7 +49,7 @@ export default function CommemtCaurosel() {
         }}
       >
         <CarouselContent>
-          {[1, 1, 1, 1, 1, 1].map((_, index) => (
+          {items.map((_, index) => (
             <CarouselItem
               key={`comment-${index}`}
               className="bg-secondary p-5 mx-3 space-y-4 rounded-md md:basis-[50.50%] lg:basis-[33.33%] basis-[90.33%] "
@@ -85,6 +89,20 @@ export default function CommemtCaurosel() {
             <ChevronRight size={30} strokeWidth={1.5} />
           </button>
         )}
+        <div
+          className="mt-10 flex items-center justify-center gap-1
+       "
+        >
+          {items.map((_, index) => (
+            <div
+              onClick={() => api?.scrollTo(index)}
+              key={`paginat-${index}`}
+              className={`w-2 h-2 rounded-full cursor-pointer hover:h-4 hover:w-4 duration-150 ${
+                index == selectedIndex ? "bg-foreground" : "bg-muted"
+              } `}
+            ></div>
+          ))}
+        </div>
       </Carousel>
     </div>
   );

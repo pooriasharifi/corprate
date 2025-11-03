@@ -5,12 +5,14 @@ import { CustomText } from "../ui/title";
 import { HEADER_ITEMS, LOGO } from "@/config/constants";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import MobileMenu from "../interface/layouts/mobile_menu";
 export default function CustomHeader() {
   const pathname = usePathname();
   return (
-    <div className="flex justify-between  w-full h-16 p-5 max-w-[1680px] mx-auto">
+    <div className="flex justify-between  w-full h-16 p-5 max-w-[1680px] mx-auto ">
       <Image alt="logo" src={LOGO} width={200} height={100} />
-      <div className="flex items-center gap-10">
+      <MobileMenu />
+      <div className="hidden md:flex items-center gap-10">
         {HEADER_ITEMS.map((item, index) => (
           <Link
             key={`header-${index}`}
@@ -25,7 +27,7 @@ export default function CustomHeader() {
           </Link>
         ))}
       </div>
-      <Button>عضویت</Button>
+      <Button className="hidden md:block">عضویت</Button>
     </div>
   );
 }

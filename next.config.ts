@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+import { withNextVideo } from "next-video/process";
+const nextConfig: NextConfig = withNextVideo({
   images: {
     remotePatterns: [
       {
@@ -22,6 +22,6 @@ const nextConfig: NextConfig = {
     ],
   },
   /* config options here */
-};
+});
 
 export default nextConfig;
