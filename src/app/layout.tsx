@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import CustomHeader from "@/components/layouts/header";
 import { Toaster } from "@/components/ui/sonner";
+import Fotter from "@/components/layouts/fotter";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body>
         <CustomHeader />
         {children}
+        <Fotter />
         <Toaster />
       </body>
     </html>

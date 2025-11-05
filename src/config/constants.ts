@@ -4,6 +4,7 @@ export const LOGO = "/images/logo.svg";
 export const TOMAN_WHITE_SVG = "/images/toman-white.svg";
 export const TOMAN_SVG = "/images/toman.svg";
 export const APPLE_LAPTOP = "/images/Apple_Computers.svg";
+export const MOBILE_APPLE_LAPTOP = "/images/comp_mobile.png";
 export const MOBILE = "/images/mobile.png";
 export const COMPUTERS = "/images/Computers.png";
 export const MOBILE_DOUBLE = "/images/mobile-double.png";

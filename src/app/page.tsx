@@ -24,6 +24,7 @@ import {
   E_FEATURE,
   F_FEATURE,
   MOBILE,
+  MOBILE_APPLE_LAPTOP,
   MOBILE_DOUBLE,
 } from "@/config/constants";
 import Image from "next/image";
@@ -31,8 +32,8 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      {/* <TopMainHome /> */}
-      {/* <RootBox className="space-y-24 pt-16">
+      <TopMainHome />
+      <RootBox className="space-y-24 pt-16">
         <div className="relative place-items-center space-y-4 ">
           <H2Title
             title="برندهایی که به ما اعتماد کرده اند"
@@ -46,7 +47,7 @@ export default function Home() {
             title="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
             className="text-muted"
           />
-          <div className="grid grid-cols-3 w-full gap-2 ">
+          <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-2 ">
             <div className="space-y-2 flex flex-col h-full justify-between">
               <FeatureComp
                 icon={A_FEATURE}
@@ -81,23 +82,37 @@ export default function Home() {
         <div className="w-full justify-center flex ">
           <Button className="place-self-center">اطلاعات بیشتر</Button>
         </div>
-        <div className="flex justify-center gap-10">
+        <div className="flex justify-center items-center gap-10 p-5 md:p-0 flex-col md:flex-row">
           <NoteWeb />
           <Image alt="laptop" src={MOBILE} width={300} height={500} />
         </div>
-        <div className="flex justify-center gap-10">
-          <Image alt="laptop" src={COMPUTERS} width={400} height={500} />
+        <div className="flex justify-center gap-10 p-5 md:p-0 flex-col md:flex-row">
+          <Image
+            alt="laptop"
+            src={COMPUTERS}
+            width={400}
+            height={500}
+            className="hidden md:block"
+          />
+
           <NoteWeb />
+          <Image
+            alt="laptop"
+            src={MOBILE_APPLE_LAPTOP}
+            width={400}
+            height={500}
+            className="md:hidden block"
+          />
         </div>
       </RootBox>
-      <div className="mt-32 w-full right-0 left-0 relative bg-primary  h-[300px] p-5 grid grid-cols-2 place-content-center">
+      <div className="mt-32 w-full right-0 left-0 relative bg-primary h-[500px] md:h-[300px] p-5 grid grid-cols-1 md:grid-cols-2 md:place-content-center place-content-start">
         <div>
           <Image
             alt="mobile"
             src={MOBILE_DOUBLE}
             width={400}
             height={400}
-            className="absolute -top-19 lg:right-1/12"
+            className="absolute md:-top-19 bottom-0 lg:right-1/12"
           />
         </div>
         <div className="space-y-3 ">
@@ -111,11 +126,11 @@ export default function Home() {
 
       <RootBox className="space-y-24 pt-16 p-5">
         <CommemtCaurosel />
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <NoteWeb />
           <CustomVideo src="video/test.mp4" />
         </div>
-      </RootBox> */}
+      </RootBox>
     </>
   );
 }

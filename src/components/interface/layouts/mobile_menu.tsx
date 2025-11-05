@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CustomText } from "@/components/ui/title";
+import { BoldTitle, CustomText } from "@/components/ui/title";
 import { HEADER_ITEMS } from "@/config/constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -39,7 +39,7 @@ export default function MobileMenu() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -100, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="fixed top-20 left-0 w-full bg-background shadow-md  p-6 z-50"
+                className="fixed top-0 left-0 w-full h-full bg-background/30 shadow-md  p-6 z-50 place-content-center place-items-center flex flex-col gap-6"
               >
                 {HEADER_ITEMS.map((item, index) => (
                   <Link
@@ -47,13 +47,14 @@ export default function MobileMenu() {
                     href={item.link}
                     className={` hover:text-accent duration-150 ${
                       pathname == item.link
-                        ? "underline underline-offset-4 text-foreground"
+                        ? "underline underline-offset-8 text-foreground"
                         : "text-muted"
                     }`}
                   >
-                    <CustomText title={item.name} />
+                    <CustomText title={item.name} className="text-2xl" />
                   </Link>
                 ))}
+                <Button size={"lg"}>عضویت</Button>
               </motion.div>
             </motion.div>
           </>
