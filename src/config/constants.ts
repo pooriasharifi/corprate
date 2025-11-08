@@ -8,6 +8,7 @@ export const MOBILE_APPLE_LAPTOP = "/images/comp_mobile.png";
 export const MOBILE = "/images/mobile.png";
 export const COMPUTERS = "/images/Computers.png";
 export const MOBILE_DOUBLE = "/images/mobile-double.png";
+export const PLANET = "/images/planet.png";
 
 export const A_FEATURE = "/images/feature/a.png";
 export const B_FEATURE = "/images/feature/b.png";
