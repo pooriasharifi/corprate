@@ -8,7 +8,7 @@ export default function Blogs() {
         <div className="">
 
       <div className="flex place-self-center space-y-10 gap-10 ">
-        <HTitle title={"وبلاگ"} className="text-4xl"/>
+        <HTitle title={"مقالات"} className="text-4xl"/>
         <H2Title
           title={
               "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیکلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک"
