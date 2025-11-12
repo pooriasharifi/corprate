@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
-import { HEADER_ITEMS, LOGO } from "@/config/constants";
-import { CustomText } from "@/components/ui/title";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+
 import CustomHeader from "@/components/layouts/header";
 import { Toaster } from "@/components/ui/sonner";
 import Fotter from "@/components/layouts/fotter";

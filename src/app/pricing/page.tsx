@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import RootBox from "@/components/ui/box";
 import { Button } from "@/components/ui/button";
 import {
-  BoldTitle,
+
   CustomText,
   H2Title,
   HTitle,

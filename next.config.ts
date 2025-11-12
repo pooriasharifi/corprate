@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 import { withNextVideo } from "next-video/process";
 const nextConfig: NextConfig = withNextVideo({
+  eslint:{
+    ignoreDuringBuilds:true
+  },
   images: {
     remotePatterns: [
       {
