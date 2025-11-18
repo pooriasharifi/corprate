@@ -38,7 +38,9 @@ export default function Fotter() {
         <div className="space-y-4">
           <div className="flex items-center gap-2 justify-center md:justify-start">
             {Array.from({ length: 5 }).map((item, index) => (
-              <Link href={""} className="rounded-full p-2 bg-white/10 w-fit">
+              <Link
+              key={`social-${index}`}
+              href={""} className="rounded-full p-2 bg-white/10 w-fit">
                 <Instagram />
               </Link>
             ))}

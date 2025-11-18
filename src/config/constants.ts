@@ -18,6 +18,7 @@ export const E_FEATURE = "/images/feature/e.png";
 export const F_FEATURE = "/images/feature/f.png";
 export const G_FEATURE = "/images/feature/g.png";
 export const H_FEATURE = "/images/feature/h.png";
+export const EMAIL = "/images/email.png"
 
 export const COMPANY_LOGO = [
   { src: "/images/company/a.png", alt: "a" },
