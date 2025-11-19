@@ -6,6 +6,7 @@ import { Label } from "./label";
 type InputProps = {
   title?: string;
   icon?: React.ReactNode;
+  left_icon?: React.ReactNode;
   errorMsg?: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -14,15 +15,21 @@ function Input({
   icon,
   errorMsg,
   title,
+  left_icon,
   type,
   ...props
 }: InputProps) {
   return (
     <>
-      <div className="relative w-full">
+      <div className="relative w-full" dir="rtl">
         {icon && (
           <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
             {icon}
+          </span>
+        )}
+        {left_icon && (
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+            {left_icon}
           </span>
         )}
         <input
@@ -89,4 +96,4 @@ function InputWithLabel({
   );
 }
 
-export { Input,InputWithLabel };
+export { Input, InputWithLabel };
