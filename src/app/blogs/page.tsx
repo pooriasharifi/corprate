@@ -1,8 +1,18 @@
+// "use client";
 import { Badge } from "@/components/ui/badge";
 import RootBox from "@/components/ui/box";
 import { Button } from "@/components/ui/button";
 import { CustomDivider } from "@/components/ui/dvider";
 import { Input } from "@/components/ui/input";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 import {
   BoldTitle,
   CustomText,
@@ -11,10 +21,21 @@ import {
   HTitle,
 } from "@/components/ui/title";
 import { EMAIL } from "@/config/constants";
-import { convertToJalaliDate } from "@/lib/utils";
+import { CustomAppRoutes } from "@/config/local_api";
+import { convertToJalaliDate, convertToPersianNumber } from "@/lib/utils";
 import Image from "next/image";
-
-export default function Blogs() {
+// import { useSearchParams } from "next/navigation";
+type Params = { searchParams: { page: string } };
+export default function Blogs({ searchParams }: Params) {
+  // const searchParams = useSearchParams();
+  const meta = {
+    current_page: Number(searchParams.page),
+    last_page: 19,
+    total: 739,
+    from_index: 1,
+    to_index: 40,
+    per_page: 40,
+  };
   const products = [1, 1, 1, 1, 1, 1];
   return (
     <RootBox>
@@ -115,6 +136,61 @@ export default function Blogs() {
           </div>
         ))}
       </div>
+      <Pagination>
+        <PaginationContent>
+          {meta.current_page > 1 && (
+            <PaginationItem>
+              <PaginationPrevious
+                href={`${CustomAppRoutes.blogs}?page=${meta.current_page - 1}`}
+              ></PaginationPrevious>
+            </PaginationItem>
+          )}
+
+          <PaginationItem>
+            <PaginationLink href={`${CustomAppRoutes.blogs}?page=1`}>
+              {convertToPersianNumber("1")}
+            </PaginationLink>
+          </PaginationItem>
+          {meta.current_page > 3 && (
+            <PaginationItem>
+              <PaginationEllipsis />
+            </PaginationItem>
+          )}
+
+          {Array.from({ length: 5 }, (_, i) => meta.current_page - 2 + i)
+            .filter((page) => page > 1 && page < meta.last_page)
+            .map((page, index) => (
+              <PaginationLink
+                isActive={page === meta.current_page}
+                href={`${CustomAppRoutes.blogs}?page=${page}`}
+                key={`pagination-middle${index}`}
+              >
+                {convertToPersianNumber(page.toString())}
+              </PaginationLink>
+            ))}
+
+          {meta.current_page < meta.last_page - 2 && (
+            <PaginationItem>
+              <PaginationEllipsis />
+            </PaginationItem>
+          )}
+
+          {meta.last_page > 1 && (
+            <PaginationLink
+              href={`${CustomAppRoutes.blogs}?page=${meta.last_page}`}
+            >
+              {convertToPersianNumber(meta.last_page.toString())}
+            </PaginationLink>
+          )}
+          {meta.last_page > meta.current_page && (
+            <PaginationItem>
+              <PaginationNext
+                href={`${CustomAppRoutes.blogs}?page=${meta.current_page + 1}`}
+              ></PaginationNext>
+            </PaginationItem>
+          )}
+        </PaginationContent>
+      </Pagination>
     </RootBox>
   );
 }
